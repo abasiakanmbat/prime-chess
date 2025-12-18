@@ -799,10 +799,10 @@ export default function Game() {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [selectedSquare, gameOver, allowMoves]);
 
-  const boardWidthStyle = { width: 'min(92vw, 960px)' };
+  const boardWidthStyle = { minWidth: 'min(2vw, 60px)' };
 
   return (
-    <div className="h-screen bg-black flex flex-col lg:flex-row overflow-hidden">
+    <div className="h-screen bg-black flex flex-col lg:flex-row">
       {/* Left Sidebar - Narrow */}
       <div className="w-full lg:w-72 bg-black p-6 flex flex-col gap-8 border-b lg:border-b-0">
         <div>
@@ -844,11 +844,11 @@ export default function Game() {
         <div className="flex flex-col items-center gap-4">
           {/* Black Captured Pieces - Above Board */}
           <div className="h-16 flex items-center justify-center gap-2 px-4 w-full" style={boardWidthStyle}>
-            <CapturedPieces color="black" />
+            {/* <CapturedPieces color="black" /> */}
           </div>
           
           {/* Chess Board */}
-          <div className="w-full" style={{width: 'min(92vw, 960px)'}}>
+          <div className="w-full" style={boardWidthStyle}>
             <ChessBoard2D
               board={board}
               whiteToMove={whiteToMove}
@@ -862,8 +862,8 @@ export default function Game() {
           </div>
           
           {/* White Captured Pieces - Below Board */}
-          <div className="h-16 flex items-center justify-center gap-2 px-4 w-full" style={boardWidthStyle}>
-            <CapturedPieces color="white" />
+          <div className=" h-16 flex items-center justify-center gap-2 px-4 w-full" style={boardWidthStyle}>
+            {/* <CapturedPieces color="white" /> */}
           </div>
         </div>
       </div>

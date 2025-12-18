@@ -1,18 +1,18 @@
 import { useGameStore } from '../store/gameStore';
 
 // Import Prime chess piece SVGs
-import wP from '../assets/chesspieces/prime/WHITE PAWN.svg';
-import wR from '../assets/chesspieces/prime/WHITE ROOK.svg';
-import wN from '../assets/chesspieces/prime/WHITE KNIGHT.svg';
-import wB from '../assets/chesspieces/prime/WHITE BISHOP.svg';
-import wQ from '../assets/chesspieces/prime/WHITE QUEEN.svg';
-import wK from '../assets/chesspieces/prime/WHITE KING.svg';
-import bP from '../assets/chesspieces/prime/BLACK PAWN.svg';
-import bR from '../assets/chesspieces/prime/BLACK ROOK.svg';
-import bN from '../assets/chesspieces/prime/BLACK KNIGHT.svg';
-import bB from '../assets/chesspieces/prime/BLACK BISHOP.svg';
-import bQ from '../assets/chesspieces/prime/BLACK QUEEN.svg';
-import bK from '../assets/chesspieces/prime/BLACK KING.svg';
+import wP from '../components/pieces/cburnett/wP.svg';
+import wR from '../components/pieces/cburnett/wR.svg';
+import wN from '../components/pieces/cburnett/wN.svg';
+import wB from '../components/pieces/cburnett/wB.svg';
+import wQ from '../components/pieces/cburnett/wQ.svg';
+import wK from '../components/pieces/cburnett/wK.svg';
+import bP from '../components/pieces/cburnett/bP.svg';
+import bR from '../components/pieces/cburnett/bR.svg';
+import bN from '../components/pieces/cburnett/bN.svg';
+import bB from '../components/pieces/cburnett/bB.svg';
+import bQ from '../components/pieces/cburnett/bQ.svg';
+import bK from '../components/pieces/cburnett/bK.svg';
 
 // Map piece codes to imported images
 const PIECE_IMAGE_MAP = {
