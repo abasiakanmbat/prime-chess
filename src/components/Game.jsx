@@ -848,7 +848,7 @@ export default function Game() {
           </div>
           
           {/* Chess Board */}
-          <div className="w-full" style={boardWidthStyle}>
+          <div className="w-full" style={{width: 'min(92vw, 960px)'}}>
             <ChessBoard2D
               board={board}
               whiteToMove={whiteToMove}
