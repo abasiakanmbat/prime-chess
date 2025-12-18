@@ -4,9 +4,9 @@ import ChessPieces2D from './ChessPieces2D';
 
 // Board art proportions (PNG): tune playable area so pieces land within the dotted grid
 // Independent X/Y offsets allow precise centering when the PNG border isn't perfectly uniform
-const BOARD_PLAYABLE_RATIO = 0.79; // ~505px of 640px - scale of the 8x8 grid
-const BOARD_OFFSET_X_RATIO = 0.108; // Left offset - tune ±0.001 to align horizontally
-const BOARD_OFFSET_Y_RATIO = 0.106; // Top offset - tune ±0.001 to align vertically
+const BOARD_PLAYABLE_RATIO = 0.75; // ~505px of 640px - scale of the 8x8 grid
+const BOARD_OFFSET_X_RATIO = 0.125; // Left offset - tune ±0.001 to align horizontally
+const BOARD_OFFSET_Y_RATIO = 0.122; // Top offset - tune ±0.001 to align vertically
 
 function Square({ 
   row, 
@@ -131,7 +131,7 @@ export default function ChessBoard2D({
       >
         {/* Your custom board background image */}
         <img 
-          src="/chessboard.png"
+          src="/chessboard-red.svg"
           alt="Chess board"
           className="absolute inset-0 w-full h-full"
           style={{ objectFit: 'contain', pointerEvents: 'none' }}
