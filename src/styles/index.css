@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Megatron';
+  src: url('../assets/fonts/Megatron.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'WorkforceSans';
+  src: url('../assets/fonts/WorkforceSans.otf') format('opentype');
+  font-weight: normal;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white font-sans;
+  }
+  
+  /* Prime Chess branding */
+  .font-megatron {
+    font-family: 'Megatron', sans-serif;
+  }
+  
+  .font-workforce {
+    font-family: 'WorkforceSans', sans-serif;
+  }
+}
+
