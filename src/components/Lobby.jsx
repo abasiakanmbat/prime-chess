@@ -85,7 +85,7 @@ export default function Lobby() {
 
       {/* Content Container - Positioned on top of video */}
       <div className="relative z-10 bg-black/50 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 w-full max-w-2xl border-2 border-cyan-400/30">
-        <h1 className="text-7xl font-megatron font-bold text-center mb-12 text-cyan-400 tracking-wider drop-shadow-lg" style={{textShadow: '0 0 20px rgba(34, 211, 238, 0.8)'}}>
+        <h1 className="text-5xl xl:text-7xl font-megatron font-bold text-center mb-12 text-cyan-400 tracking-wider drop-shadow-lg" style={{textShadow: '0 0 20px rgba(34, 211, 238, 0.8)'}}>
           PrimeChess OTB
         </h1>
 
@@ -95,7 +95,7 @@ export default function Lobby() {
               <label className="block text-sm font-workforce font-bold text-cyan-300 mb-4 uppercase tracking-widest drop-shadow-lg" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.6)'}}>
                 Select Time Control
               </label>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 {VALID_TIME_CONTROLS.map((tc) => {
                   const [minutes, increment] = tc.split('+');
                   return (
@@ -151,7 +151,7 @@ export default function Lobby() {
               <label className="block text-2xl font-workforce font-bold text-cyan-300 mb-4 uppercase tracking-widest drop-shadow-lg" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.6)'}}>
                 Join or Watch
               </label>
-              <div className="flex gap-3 mb-4">
+              <div className="flex flex-col md:flex-row gap-3 mb-4">
                 <input
                   type="text"
                   // value={gameCode}
@@ -196,7 +196,7 @@ export default function Lobby() {
           <div className="space-y-8 text-center">
             <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border-2 border-cyan-400/50">
               <div className="text-sm text-cyan-400 mb-4 uppercase font-workforce tracking-widest drop-shadow-lg" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.6)'}}>Game Code</div>
-              <div className="text-5xl font-mono font-bold mb-6 text-cyan-300 tracking-[0.5em] drop-shadow-lg" style={{textShadow: '0 0 20px rgba(34, 211, 238, 0.8)'}}>{gameCode}</div>
+              <div className="text-4xl md:text-5xl font-mono font-bold mb-6 text-cyan-300 tracking-[0.5em] drop-shadow-lg" style={{textShadow: '0 0 20px rgba(34, 211, 238, 0.8)'}}>{gameCode}</div>
               <button
                 onClick={copyGameCode}
                 className="px-6 py-2 bg-gradient-to-r from-cyan-400 to-green-400 hover:from-cyan-300 hover:to-green-300 text-black rounded-full transition-all font-workforce font-bold uppercase tracking-wider text-sm border-2 border-cyan-300"
@@ -232,6 +232,25 @@ export default function Lobby() {
                 Join as Black
               </button>
             </div>
+           <button
+                onClick={() => {
+                  if (!gameCode.trim()) {
+                    setError('Please enter a game code');
+                    return;
+                  }
+                  if (gameCode.length !== 6) {
+                    setError('Game code must be 6 characters');
+                    return;
+                  }
+                  navigate(`/watch?code=${gameCode}`);
+                }}
+                className="w-full px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-workforce font-bold rounded-full transition-all duration-300 border-2 border-purple-400 uppercase tracking-wider hover:scale-105"
+                style={{
+                  boxShadow: '0 0 15px rgba(168, 85, 247, 0.6)'
+                }}
+              >
+                Watch as Spectator
+              </button>
 
             <button
               onClick={() => setGameCode('')}
