@@ -259,14 +259,14 @@ export default function GameTimer({ timeControl, whiteToMove, onTimeFlag, isActi
   // Note: Increment is applied via window.gameTimer.applyIncrement() from Game component
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-5">
       <div className="transition-all duration-200">
-        <div className="text-xl text-white mb-4 uppercase tracking-wider font-workforce font-bold text-center">White</div>
-        <div className="text-8xl font-bold text-red-600 text-center" style={{ fontFamily: 'Arial, Helvetica, sans-serif', textShadow: '0 0 20px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.6)' }}>{formatTime(whiteTime)}</div>
+        <div className="text-xl text-white mb-1 uppercase tracking-wider font-workforce font-bold text-center">White</div>
+        <div className="text-6xl font-bold text-red-600 text-center" style={{ fontFamily: 'Arial, Helvetica, sans-serif', textShadow: '0 0 20px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.6)' }}>{formatTime(whiteTime)}</div>
       </div>
       <div className="transition-all duration-200">
-        <div className="text-xl text-white mb-4 uppercase tracking-wider font-workforce font-bold text-center">Black</div>
-        <div className="text-8xl font-bold text-red-600 text-center" style={{ fontFamily: 'Arial, Helvetica, sans-serif', textShadow: '0 0 20px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.6)' }}>{formatTime(blackTime)}</div>
+        <div className="text-xl text-white mb-1 uppercase tracking-wider font-workforce font-bold text-center">Black</div>
+        <div className="text-6xl font-bold text-red-600 text-center" style={{ fontFamily: 'Arial, Helvetica, sans-serif', textShadow: '0 0 20px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.6)' }}>{formatTime(blackTime)}</div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState, useEffect } from 'react';
 import { useGameStore } from '../store/gameStore';
 import ChessPieces2D from './ChessPieces2D';
+import CapturedPieces from './CapturedPieces';
 
 // Board art proportions (PNG): tune playable area so pieces land within the dotted grid
 // Independent X/Y offsets allow precise centering when the PNG border isn't perfectly uniform
@@ -118,12 +119,18 @@ export default function ChessBoard2D({
 
   return (
     <div className="relative">
+      <div className='absolute top-3 z-50 flex justify-center w-full max-md:hidden'>
+            <CapturedPieces color="black" />
+      </div>
+         <div className='absolute bottom-3 z-50 flex justify-center w-full  max-md:hidden'>
+            <CapturedPieces color="white" />
+      </div>
       {/* Chess board with your custom designed board image */}
       <div
         ref={boardRef}
         className="relative bg-gray-800"
         style={{
-          width: 'min(92vw, 960px)',
+          width: 'min(62vw, 660px)',
           aspectRatio: '1 / 1',
           maxWidth: '960px',
           height: boardSize ? `${boardSize}px` : 'auto'
