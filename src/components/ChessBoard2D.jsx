@@ -118,7 +118,7 @@ export default function ChessBoard2D({
   }, [selectedSquare, legalMoves, checkSquare, shouldFlip]);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className='absolute top-3 z-50 flex justify-center w-full max-md:hidden'>
             <CapturedPieces color="black" />
       </div>
@@ -130,7 +130,7 @@ export default function ChessBoard2D({
         ref={boardRef}
         className="relative bg-gray-800"
         style={{
-          width: 'min(62vw, 660px)',
+          width: 'min(92vw, 660px)',
           aspectRatio: '1 / 1',
           maxWidth: '960px',
           height: boardSize ? `${boardSize}px` : 'auto'

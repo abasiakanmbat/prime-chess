@@ -799,12 +799,12 @@ export default function Game() {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [selectedSquare, gameOver, allowMoves]);
 
-  const boardWidthStyle = { minWidth: 'min(2vw, 60px)' };
+  const boardWidthStyle = { Width: 'min(92vw, 60px)' };
 
   return (
-    <div className="h-screen bg-black flex flex-col lg:flex-row">
+    <div className="h-fit lg:h-screen bg-black flex flex-col lg:flex-row ">
       {/* Left Sidebar - Narrow */}
-      <div className="w-full lg:w-72 bg-black p-6 flex flex-col gap-8 border-b lg:border-b-0">
+      <div className="max-lg:order-2 w-full lg:w-72 bg-black p-6 flex flex-col gap-8 border-b lg:border-b-0">
         <div>
           <GameTimer 
             key={gameCode} 
@@ -819,7 +819,7 @@ export default function Game() {
           <button
             onClick={handleResign}
             disabled={!gameStarted || gameOver}
-            className="w-32 h-32 bg-red-600 hover:bg-red-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-red-200 font-workforce font-bold rounded-full text-2xl uppercase tracking-wider transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 shadow-lg shadow-red-900/50"
+            className="w-full py-2 lg:w-32 lg:h-32 bg-red-600 hover:bg-red-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-red-200 font-workforce font-bold rounded-lg lg:rounded-full text-2xl uppercase tracking-wider transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 shadow-lg shadow-red-900/50"
             style={{ boxShadow: '0 0 30px rgba(220, 38, 38, 0.5)', textShadow: '0 0 20px rgba(239, 68, 68, 1), 0 0 40px rgba(239, 68, 68, 0.8)' }}
           >
             RESIGN
@@ -840,12 +840,12 @@ export default function Game() {
       </div>
 
       {/* Main Board Area - Centered with captured pieces above/below */}
-      <div className="flex-1 relative bg-black min-h-[400px] lg:min-h-0 flex items-center justify-center">
+      <div className="max-lg:order-1 flex-1 relative bg-black  lg:min-h-0 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           {/* Black Captured Pieces - Above Board */}
-          <div className="h-16 flex items-center justify-center gap-2 px-4 w-full" style={boardWidthStyle}>
+          {/* <div className="h-16 flex items-center justify-center gap-2 px-4 w-full" style={boardWidthStyle}> */}
             {/* <CapturedPieces color="black" /> */}
-          </div>
+          {/* </div> */}
           
           {/* Chess Board */}
           <div className="w-full" style={boardWidthStyle}>
@@ -862,14 +862,14 @@ export default function Game() {
           </div>
           
           {/* White Captured Pieces - Below Board */}
-          <div className=" h-16 flex items-center justify-center gap-2 px-4 w-full" style={boardWidthStyle}>
+          {/* <div className=" h-16 flex items-center justify-center gap-2 px-4 w-full" style={boardWidthStyle}> */}
             {/* <CapturedPieces color="white" /> */}
-          </div>
+          {/* </div> */}
         </div>
       </div>
 
       {/* Right Sidebar */}
-      <div className="w-full lg:w-80 bg-black p-6 flex flex-col items-center gap-6 border-t lg:border-t-0 overflow-hidden">
+      <div className="max-lg:order-3 w-full lg:w-80 bg-black p-6 flex flex-col items-center gap-6 border-t lg:border-t-0 overflow-hidden">
         <div className="w-full max-w-[320px] space-y-6 text-center mx-auto">
         <div className="flex items-center justify-center gap-2">
           <h3 className="text-2xl font-workforce font-bold text-white uppercase tracking-wider leading-none">GAME INFO</h3>
