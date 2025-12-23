@@ -36,7 +36,7 @@ const server=http.createServer(app);
 const io=new Server(server,{cors:{origin:"*"}});
 
 // Illegal move system constants
-const ILLEGAL_MOVE_LIMIT = 3; // Game ends on 3rd illegal move
+const ILLEGAL_MOVE_LIMIT = 9; // Game ends on 9th illegal move
 const ILLEGAL_MOVE_TIME_PENALTY = 5000; // 5 seconds in milliseconds
 
 // API

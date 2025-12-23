@@ -52,7 +52,7 @@ export default function MoveHistory({ moves }) {
             <div key={idx} className="text-sm">
               {/* Turn number and moves on one line */}
               <div className="flex items-center gap-3">
-                <span className="text-gray-500 font-workforce font-bold w-8">{group.turn}.</span>
+                <span className="text-gray-500  font-bold w-8">{group.turn}.</span>
                 <div className="flex-1 grid grid-cols-2 gap-3">
                   {group.white ? (
                     <div className="text-white font-mono">
