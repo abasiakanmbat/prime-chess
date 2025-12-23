@@ -242,6 +242,8 @@ export default function Game() {
       // Play capture sound only (move sound removed)
       if (capturedPiece) {
         playSound('capture.mp3');
+      }else {
+        playSound('select.mp3');
       }
       
       // Play check/checkmate sound
@@ -869,7 +871,7 @@ export default function Game() {
       </div>
 
       {/* Right Sidebar */}
-      <div className="max-lg:order-3 w-full lg:w-80 bg-black p-6 flex flex-col items-center gap-6 border-t lg:border-t-0 overflow-hidden">
+      <div className="max-lg:order-3 w-full lg:w-80 bg-black p-6 flex flex-col items-center gap-6 border-t lg:border-t-0 overflow-y-scroll">
         <div className="w-full max-w-[320px] space-y-6 text-center mx-auto">
         <div className="flex items-center justify-center gap-2">
           <h3 className="text-2xl font-workforce font-bold text-white uppercase tracking-wider leading-none">GAME INFO</h3>
@@ -908,11 +910,11 @@ export default function Game() {
             <div className="space-y-2 text-white font-workforce text-base uppercase">
               <div className="flex flex-col items-center gap-1">
                 <span>WHITE</span>
-                <span className={`font-sans font-bold ${illegalMoves.white >= 2 ? 'text-red-400' : illegalMoves.white >= 1 ? 'text-orange-300' : 'text-gray-300'}`}>{illegalMoves.white}/3</span>
+                <span className={`font-sans font-bold ${illegalMoves.white >= 9 ? 'text-red-400' : illegalMoves.white >= 1 ? 'text-orange-300' : 'text-gray-300'}`}>{illegalMoves.white}/9</span>
               </div>
               <div className="flex flex-col items-center gap-1">
                 <span>BLACK</span>
-                <span className={`font-sans font-bold ${illegalMoves.black >= 2 ? 'text-red-400' : illegalMoves.black >= 1 ? 'text-orange-300' : 'text-gray-300'}`}>{illegalMoves.black}/3</span>
+                <span className={`font-sans font-bold ${illegalMoves.black >= 9 ? 'text-red-400' : illegalMoves.black >= 1 ? 'text-orange-300' : 'text-gray-300'}`}>{illegalMoves.black}/9</span>
               </div>
             </div>
           </div>

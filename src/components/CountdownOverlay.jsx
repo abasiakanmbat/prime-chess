@@ -3,7 +3,7 @@ import { playSound } from '../utils/sounds';
 import ConfirmDialog from './ConfirmDialog';
 
 export default function CountdownOverlay({ onComplete, timeControl, onCancel }) {
-  const [countdown, setCountdown] = useState(30);
+  const [countdown, setCountdown] = useState(15);
   const [show, setShow] = useState(true);
   const [showCancelConfirm, setShowCancelConfirm] = useState(false);
   const soundPlayedRef = useRef(false); // Track if sound has been played to prevent duplicate playback
